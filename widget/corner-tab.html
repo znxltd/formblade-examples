@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Corner Tab Widget — FormBlade Example</title>
+</head>
+<body>
+  <h1>Your Website</h1>
+  <p>Click the "Feedback" tab on the right edge to open the form.</p>
+
+  <!-- FormBlade Corner Tab Widget -->
+  <script>
+  (function() {
+    var FORM_URL = "https://formblade.com/f/contact";
+    var TAB_TEXT = "Feedback";
+    var TAB_COLOR = "#6366f1";
+
+    var tab = document.createElement("button");
+    tab.textContent = TAB_TEXT;
+    tab.style.cssText = "position:fixed;right:0;top:50%;margin-top:-44px;z-index:9998;writing-mode:vertical-rl;padding:14px 8px;border:none;border-radius:8px 0 0 8px;cursor:pointer;font-size:15px;font-weight:700;letter-spacing:1.5px;color:#fff;font-family:inherit;background:" + TAB_COLOR + ";box-shadow:-2px 0 8px rgba(0,0,0,0.15);";
+
+    var card = document.createElement("div");
+    card.style.cssText = "display:none;position:fixed;z-index:9999;right:16px;bottom:16px;width:calc(100% - 32px);max-width:400px;height:600px;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,0.2);";
+
+    var header = document.createElement("div");
+    header.style.cssText = "display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid #e5e7eb;";
+    var title = document.createElement("span");
+    title.textContent = TAB_TEXT;
+    title.style.cssText = "font-size:15px;font-weight:700;color:#1f2937;";
+    var close = document.createElement("button");
+    close.innerHTML = "\u00d7";
+    close.style.cssText = "background:none;border:none;font-size:20px;cursor:pointer;color:#666;width:44px;height:44px;line-height:44px;text-align:center;";
+    header.appendChild(title);
+    header.appendChild(close);
+
+    var iframe = document.createElement("iframe");
+    iframe.style.cssText = "width:100%;height:calc(100% - 49px);border:none;display:block;";
+
+    card.appendChild(header);
+    card.appendChild(iframe);
+    document.body.appendChild(tab);
+    document.body.appendChild(card);
+
+    var isOpen = false;
+    tab.onclick = function() {
+      isOpen = !isOpen;
+      if (isOpen) { iframe.src = FORM_URL; card.style.display = "block"; }
+      else { card.style.display = "none"; }
+    };
+    close.onclick = function() { isOpen = false; card.style.display = "none"; };
+    iframe.addEventListener("load", function() {
+      if (iframe.src && iframe.src !== FORM_URL) {
+        setTimeout(function() { isOpen = false; card.style.display = "none"; iframe.src = ""; }, 3000);
+      }
+    });
+  })();
+  </script>
+</body>
+</html>

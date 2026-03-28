@@ -6,6 +6,7 @@ Embeddable form widgets that add a floating button to any website. Click the but
 
 - **[popup.html](popup.html)** — centered modal overlay
 - **[slide-in.html](slide-in.html)** — panel slides in from the right
+- **[corner-tab.html](corner-tab.html)** — vertical tab on the right edge, opens a card
 
 ## Usage
 
