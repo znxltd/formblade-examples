@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Slide-in Widget — FormBlade Example</title>
+</head>
+<body>
+  <h1>Your Website</h1>
+  <p>Click the "Contact Us" button to open the slide-in panel.</p>
+
+  <!-- FormBlade Slide-in Panel Widget -->
+  <script>
+  (function() {
+    var FORM_URL = "https://formblade.com/f/contact";
+    var BUTTON_TEXT = "Contact Us";
+    var BUTTON_COLOR = "#6366f1";
+
+    var btn = document.createElement("button");
+    btn.textContent = BUTTON_TEXT;
+    btn.style.cssText = "position:fixed;bottom:24px;right:24px;z-index:9998;padding:12px 24px;border:none;border-radius:50px;cursor:pointer;font-size:15px;font-weight:600;color:#fff;font-family:inherit;background:" + BUTTON_COLOR + ";box-shadow:0 4px 12px rgba(0,0,0,0.15);";
+
+    var backdrop = document.createElement("div");
+    backdrop.style.cssText = "display:none;position:fixed;top:0;right:0;bottom:0;left:0;z-index:9998;background:rgba(0,0,0,0.3);";
+
+    var panel = document.createElement("div");
+    panel.style.cssText = "position:fixed;top:0;right:-100%;width:100%;max-width:420px;height:100%;z-index:9999;background:#fff;box-shadow:-4px 0 20px rgba(0,0,0,0.15);transition:right 0.3s ease;";
+
+    var header = document.createElement("div");
+    header.style.cssText = "display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid #e5e7eb;";
+    var title = document.createElement("span");
+    title.textContent = BUTTON_TEXT;
+    title.style.cssText = "font-size:16px;font-weight:700;color:#1f2937;";
+    var close = document.createElement("button");
+    close.innerHTML = "\u00d7";
+    close.style.cssText = "background:none;border:none;font-size:22px;cursor:pointer;color:#666;width:44px;height:44px;line-height:44px;text-align:center;";
+    header.appendChild(title);
+    header.appendChild(close);
+
+    var iframe = document.createElement("iframe");
+    iframe.style.cssText = "width:100%;height:calc(100% - 57px);border:none;display:block;";
+
+    panel.appendChild(header);
+    panel.appendChild(iframe);
+    document.body.appendChild(btn);
+    document.body.appendChild(backdrop);
+    document.body.appendChild(panel);
+
+    function open() { iframe.src = FORM_URL; panel.style.right = "0"; backdrop.style.display = "block"; }
+    function shut() { panel.style.right = "-100%"; backdrop.style.display = "none"; }
+
+    btn.onclick = open;
+    close.onclick = shut;
+    backdrop.onclick = shut;
+  })();
+  </script>
+</body>
+</html>
