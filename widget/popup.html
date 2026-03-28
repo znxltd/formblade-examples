@@ -18,7 +18,7 @@
 
     var btn = document.createElement("button");
     btn.textContent = BUTTON_TEXT;
-    btn.style.cssText = "position:fixed;bottom:24px;right:24px;z-index:9998;padding:12px 24px;border:none;border-radius:50px;cursor:pointer;font-size:15px;font-weight:600;color:#fff;font-family:inherit;background:" + BUTTON_COLOR + ";box-shadow:0 4px 12px rgba(0,0,0,0.15);";
+    btn.style.cssText = "position:fixed;bottom:max(24px, env(safe-area-inset-bottom, 0px) + 16px);right:16px;z-index:9998;padding:12px 24px;border:none;border-radius:50px;cursor:pointer;font-size:15px;font-weight:600;color:#fff;font-family:inherit;background:" + BUTTON_COLOR + ";box-shadow:0 4px 12px rgba(0,0,0,0.15);";
 
     var overlay = document.createElement("div");
     overlay.style.cssText = "display:none;position:fixed;top:0;right:0;bottom:0;left:0;z-index:9999;background:rgba(0,0,0,0.5);align-items:center;justify-content:center;padding:16px;";
