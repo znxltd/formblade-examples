@@ -43,22 +43,25 @@ FormBlade handles contact form submissions so you don't need a backend server. P
 
 Features: animated emoji, auto-open triggers (time/scroll/exit intent), notification dot, show-once, hide after submit, referrer tracking, keep session, mobile-friendly.
 
-### Personal plan includes
+### Features
 
-- 300 submissions/month
-- 5 forms
-- 9 form templates + visual designer with 6 themes
-- Email, Telegram, Slack, Discord, Teams notifications (50 integrations/mo)
-- Spam protection (honeypot, math, hCaptcha)
-- File uploads (1 MB per file, 100 MB storage)
-- Embeddable widget with emoji + triggers
-- REST API (read-only)
-- CSV export
-- GDPR/CCPA compliance controls
-- Country + device detection
-- 90-day submission archive
+- **9 form templates** — contact, feedback, newsletter, support, registration, booking, quote request, job application, blank
+- **Visual form designer** with 6 themes (minimal, corporate, glass, dark, warm, compact) and custom colors
+- **Embeddable widget** — floating button with slide-in panel, animated emoji, auto-open triggers (time delay, scroll percentage, exit intent), notification dot, show-once, hide after submit
+- **Notifications** — email, Telegram, Slack, Discord, Microsoft Teams
+- **Spam protection** — honeypot fields, JavaScript verification, math challenge, hCaptcha, reCAPTCHA v2/v3, Cloudflare Turnstile, GeeTest v4
+- **File uploads** — documents, images, archives with configurable size limits
+- **Webhooks** — signed JSON payloads to any URL with automatic retries
+- **Google Sheets** — auto-append a row to a spreadsheet on every submission
+- **Auto-responder** — send confirmation emails to submitters with personalized placeholders
+- **REST API** — manage forms, submissions, and files programmatically ([OpenAPI spec](https://formblade.com/api/openapi.json))
+- **Export** — CSV and Excel download
+- **GDPR/CCPA compliance** — consent checkboxes, IP anonymization, data retention controls, per-form privacy settings
+- **Country and device detection** — automatic geo + device/browser/OS parsing on every submission
+- **Referrer tracking** — know which page the visitor was on when they submitted via widget
+- **Custom redirects** — send visitors to your own thank-you page after submission
 
-No credit card. No trial period.
+Free to use. Sign up at [formblade.com](https://formblade.com/app/register).
 
 ## Links
 
@@ -69,7 +72,6 @@ No credit card. No trial period.
 - **API reference:** [formblade.com/docs/api](https://formblade.com/docs/api)
 - **OpenAPI spec:** [formblade.com/api/openapi.json](https://formblade.com/api/openapi.json)
 - **Platform guides:** [formblade.com/docs/platforms](https://formblade.com/docs/platforms)
-- **Pricing:** [formblade.com/pricing](https://formblade.com/pricing)
 
 ## License
 
